@@ -14,6 +14,7 @@ Note Taker - An application that can write and save notes to organize thoughts a
 4. A screenshot and link are provided to preview the application
 
 ![Preview](assets/preview.jpg)
+[Note Taker](https://mighty-dusk-21773.herokuapp.com/)
 
 ## Technology Used
 
