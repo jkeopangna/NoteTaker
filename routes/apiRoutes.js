@@ -11,9 +11,12 @@ const read = util.promisify(fs.readFile);
 const write = util.promisify(fs.writeFile);
 
 module.exports = (app) => {
-    app.get('/api/notes', (req, res) => res.json(db));
-    // res.end();
-};
+    app.get('/api/notes', (req, res) => {
+        read('./db/db.json', 'utf-8').then((data) => {
+            res.json(JSON.parse(data));
+            res.end()
+        });
+});
 
 app.post('/api/notes', (req, res) => {
     let note = req.body;
@@ -27,6 +30,5 @@ app.post('/api/notes', (req, res) => {
     });
     res.json(db);
     res.end();
-})
-
-
+});
+};
